@@ -305,9 +305,6 @@
 	onMount(initTerminal);
 	async function handleConnect()
 	{
-		const w = window.open("login.html", "_blank");
-		await cx.networkLogin();
-		w.location.href = await startLogin();
 	}
 	async function handleReset()
 	{

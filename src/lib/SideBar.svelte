@@ -4,9 +4,6 @@
 	import NetworkingTab from './NetworkingTab.svelte';
 	import CpuTab from './CpuTab.svelte';
 	import DiskTab from './DiskTab.svelte';
-	import PostsTab from './PostsTab.svelte';
-	import DiscordTab from './DiscordTab.svelte';
-	import GitHubTab from './GitHubTab.svelte';
 	import { cpuActivity, diskActivity } from './activities.js'
 
 	const icons = [
@@ -15,9 +12,6 @@
 		{ icon: 'fas fa-microchip', info: 'CPU', activity: cpuActivity },
 		{ icon: 'fas fa-compact-disc', info: 'Disk', activity: diskActivity },
 		null,
-		{ icon: 'fas fa-book-open', info: 'Posts', activity: null },
-		{ icon: 'fab fa-discord', info: 'Discord', activity: null },
-		{ icon: 'fab fa-github', info: 'GitHub', activity: null },
 	];
 
 	let activeInfo = null;
@@ -49,18 +43,10 @@
 	<div class="flex flex-col gap-5 shrink-0 w-60 h-full z-10 p-2 bg-neutral-600 text-gray-100" class:hidden={!activeInfo}>
 		{#if activeInfo === 'Information'}
 			<InformationTab/>
-		{:else if activeInfo === 'Networking'}
-			<NetworkingTab on:connect/>
 		{:else if activeInfo === 'CPU'}
 			<CpuTab/>
 		{:else if activeInfo === 'Disk'}
 			<DiskTab on:reset/>
-		{:else if activeInfo === 'Posts'}
-			<PostsTab/>
-		{:else if activeInfo === 'Discord'}
-			<DiscordTab/>
-		{:else if activeInfo === 'GitHub'}
-			<GitHubTab/>
 		{:else}
 			<p>TODO: {activeInfo}</p>
 		{/if}
