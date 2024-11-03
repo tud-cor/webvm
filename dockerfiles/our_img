@@ -24,6 +24,9 @@ RUN apt-get -y install \
 	whiptail
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user ./examples /home/user/examples
+ADD https://surfdrive.surf.nl/files/index.php/s/QCuzkQ7Wka69K7y/download /tmp/extra_repository.tar.gz
+RUN tar -x -C /home/user -f /tmp/extra_repository.tar.gz \
+ && rm /tmp/extra_repository.tar.gz
 # We set WORKDIR, as this gets extracted by Webvm to be used as the cwd. This is optional.
 WORKDIR /home/user/
 # We set env, as this gets extracted by Webvm. This is optional.
