@@ -1,7 +1,7 @@
 const color= "\x1b[1;35m";
 const underline= "\x1b[94;4m";
 const normal= "\x1b[0m";
-export const introMessage = [
+export const introMessage_original = [
 	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
 	"|                                                                             |",
 	"| WebVM is a virtual Linux environment running in the browser via WebAssembly |",
@@ -26,6 +26,24 @@ export const introMessage = [
 	"     vim examples/c/helloworld.c",
 	"     curl --max-time 15 parrot.live  # requires networking",
 	""
+];
+export const introMessage = [
+	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
+	"|                                                                             |",
+	"| This is a virtual Linux environment running in a browser. It runs Bash.     |",
+	"|                                                                             |",
+	"| Run 'help' to see help content.                                             |",
+	"|                                                                             |",
+	"| If you remove a file or directory by accident, reset the file system using  |",
+	"| the spinning disk icon in the left toolbar (under the chip) and choose the  |",
+	"| 'Reset disk' option (with the trash can icon). Confirm the reset and wait   |",
+	"| for the VM to reload.                                                       |",
+	"|                                                                             |",
+	"| Note: the virtual 'hard drive' is hosted remotely and can therefore be a    |",
+	"| bit slow sometimes. Be sure to allow for sufficient time when executing     |",
+	"| commands or trying to run programs.                                         |",
+	"|                                                                             |",
+	"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+"
 ];
 export const errorMessage = [
 	color + "CheerpX could not start" + normal,
