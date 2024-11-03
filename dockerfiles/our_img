@@ -13,6 +13,7 @@ RUN apt-get -y install \
 	git \
 	less \
 	make \
+	man-db \
 	manpages \
 	nano \
 	patch \
